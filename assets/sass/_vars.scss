@@ -1,0 +1,57 @@
+$primary: #6b5aed;
+$secondary: #47bdaf;
+
+$font-primary: #2f323e;
+$font-secondary: #9fa3b5;
+$font-input: #484d66;
+$font-icon: #82879e;
+
+$background: #f9fafc;
+$highlight: #f5f6fa;
+$border: #d5d8e3;
+$border-input: #b8bccd;
+
+$green: #3dca61;
+$red: #f84f4f;
+$orange: #ff9860;
+
+$animate: cubic-bezier(0.645, 0.045, 0.355, 1);
+
+$Calibre: Calibre, "San Francisco", "SF Pro Text", -apple-system, system-ui, BlinkMacSystemFont, Roboto, "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+$SFMono: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", "Lucida Console", Monaco, monospace;
+
+@mixin onGiant {
+  @media (max-width: 90em) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (max-width: 62.6em) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (max-width: 48em) {
+    @content;
+  }
+}
+
+@mixin onTobile {
+  @media (max-width: 37.5em) {
+    @content;
+  }
+}
+
+@mixin onPhablet {
+  @media (max-width: 30em) {
+    @content;
+  }
+}
+
+@mixin onMobile {
+  @media (max-width: 23.5em) {
+    @content;
+  }
+}

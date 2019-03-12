@@ -1,0 +1,23 @@
+@import "../../../assets/sass/vars";
+
+.Link {
+  color: $primary;
+  text-decoration-skip-ink: auto;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 0px;
+    height: 1px;
+    position: relative;
+    bottom: 0.32em;
+    background-color: $primary;
+    transition: width 0.15s $animate 0s;
+  }
+
+  &:hover {
+    &::after {
+      width: 100%;
+    }
+  }
+}
