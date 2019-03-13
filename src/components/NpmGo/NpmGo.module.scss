@@ -1,4 +1,4 @@
-@import "../../../assets/sass/vars";
+@import '../../../assets/sass/vars';
 
 .NpmGo {
   display: inline-block;
@@ -23,7 +23,13 @@
 }
 
 @keyframes blink {
-  0% { opacity:1; }
-  50% { opacity:0; }
-  100% { opacity:1; }
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

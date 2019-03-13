@@ -12,8 +12,12 @@ body {
 
   -webkit-font-smoothing: antialiased;
 
-  @include onPhablet { font-size: 18px; }
-  @include onTablet { font-size: 15px; }
+  @include onPhablet {
+    font-size: 18px;
+  }
+  @include onTablet {
+    font-size: 15px;
+  }
 }
 
 a {

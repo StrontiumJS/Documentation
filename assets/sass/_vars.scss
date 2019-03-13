@@ -1,5 +1,5 @@
-$primary: #3849AB;
-$secondary: #F03A47;
+$primary: #3849ab;
+$secondary: #f03a47;
 
 $font-primary: #525252;
 $font-secondary: #aeaeae;
@@ -9,8 +9,9 @@ $line: #dee0df;
 
 $animate: cubic-bezier(0.645, 0.045, 0.355, 1);
 
-$Calibre: Calibre, "San Francisco", "SF Pro Text", -apple-system, system-ui, BlinkMacSystemFont, Roboto, "Helvetica Neue", "Segoe UI", Arial, sans-serif;
-$SFMono: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", "Lucida Console", Monaco, monospace;
+$Calibre: Calibre, 'San Francisco', 'SF Pro Text', -apple-system, system-ui, BlinkMacSystemFont,
+  Roboto, 'Helvetica Neue', 'Segoe UI', Arial, sans-serif;
+$SFMono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', 'Lucida Console', Monaco, monospace;
 
 @mixin onGiant {
   @media (max-width: 90em) {

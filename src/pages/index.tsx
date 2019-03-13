@@ -1,5 +1,5 @@
-import * as React from 'react'
-import styles from './index.module.scss'
+import * as React from 'react';
+import styles from './index.module.scss';
 import Navbar from '../components/Navbar';
 import Head from '../components/Head';
 import NpmGo from '../components/NpmGo';
@@ -20,7 +20,7 @@ const IndexPage: React.FunctionComponent<{}> = () => {
         </div>
       </div>
     </div>
-  )
+  );
 };
 
 export default IndexPage;
