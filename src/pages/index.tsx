@@ -1,11 +1,21 @@
 import * as React from 'react'
 import styles from './index.module.scss'
-import Link from '../components/Link';
+import Navbar from '../components/Navbar';
+import Head from '../components/Head';
 
 const IndexPage: React.FunctionComponent<{}> = () => {
   return (
-    <div className={styles.Container}>
-      Welcome to <Link href='https://github.com/StrontiumJS/Framework'>StrontiumJS</Link>
+    <div className={styles.IndexPage}>
+      <Head />
+      <Navbar />
+      <div className={styles.Content}>
+        <div className={styles.Landing}>
+          <div className={styles.Hero}>
+            <h1>Imagine what you could create</h1>
+            <h2>A node framework for production, not just projects</h2>
+          </div>
+        </div>
+      </div>
     </div>
   )
 };

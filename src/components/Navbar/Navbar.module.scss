@@ -1,0 +1,93 @@
+@import "../../../assets/sass/vars";
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}
+}
+
+.Navbar {
+
+}
+
+.Topper {
+  background: $primary;
+  height: 10px;
+  width: 100%;
+}
+
+.Nav {
+  border-bottom: 1px solid $line;
+  display: flex;
+  height: 80px;
+}
+
+.Brand {
+  border-right: 1px solid $line;
+  line-height: 80px;
+  padding: 3px 30px 0;
+  color: $primary;
+
+  i {
+    font-size: 30px;
+    vertical-align: middle;
+    margin-top: -6px;
+    margin-right: 5px;
+  }
+}
+
+.Search {
+  flex-grow: 1;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+
+  i {
+    font-size: 12px;
+    color: $font-secondary;
+  }
+
+  input {
+    color: $font-primary;
+    border: none;
+    outline: none;
+    background: none;
+    height: 100%;
+    margin-left: 20px;
+    font-size: 14px;
+    height: 100%;
+    flex-grow: 1;
+    font-family: $SFMono;
+
+    @include placeholder {
+      color: lighten($font-primary, 8%);
+    }
+  }
+}
+
+.NavList {
+  display: flex;
+  padding: 0 20px;
+  border-left: 1px solid $line;
+
+  li {
+    display: flex;
+    align-items: center;
+    margin: 0 15px;
+    transition: border-color 0.2s $animate, color 0.2s $animate;
+    border-bottom: 3px solid transparent;
+    font-size: 17px;
+
+    a {
+      color: inherit;
+      display: block;
+      padding: 32px 10px 24px;
+    }
+
+    &:hover {
+      color: $primary;
+      border-color: $primary;
+    }
+  }
+}
