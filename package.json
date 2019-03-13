@@ -6,7 +6,8 @@
     "develop": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "deploy": "gatsby build && cp ./src/static/CNAME public/ && gh-pages -d public",
+    "predeploy": "gatsby build && cp ./src/static/CNAME public/",
+    "deploy": "gh-pages -d public",
     "lint": "prettier --list-different --config ./prettier.json \"{src,assets}/**/*.{ts,tsx,scss}\"",
     "lint:fix": "prettier --list-different --config ./prettier.json --write \"{src,assets}/**/*.{ts,tsx,scss}\""
   },

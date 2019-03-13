@@ -16,4 +16,4 @@ before_script:
   - 'npm i -g gatsby'
   - 'npm i'
 script:
-  - 'npm run deploy'
+  - 'npm run predeploy'
