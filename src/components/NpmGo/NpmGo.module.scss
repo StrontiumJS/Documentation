@@ -1,0 +1,29 @@
+@import "../../../assets/sass/vars";
+
+.NpmGo {
+  display: inline-block;
+  background-color: #282936;
+  color: white;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 13px;
+  font-family: $SFMono;
+  width: 241px;
+  text-align: left;
+
+  .Typist {
+    display: inline;
+
+    span {
+      display: inline-block;
+      opacity: 1;
+      animation: blink 1s linear infinite;
+    }
+  }
+}
+
+@keyframes blink {
+  0% { opacity:1; }
+  50% { opacity:0; }
+  100% { opacity:1; }
+}
