@@ -82,19 +82,21 @@
     display: flex;
     align-items: center;
     margin: 0 15px;
-    transition: border-color 0.2s $animate, color 0.2s $animate;
-    border-bottom: 3px solid transparent;
     font-size: 17px;
 
     a {
       color: inherit;
       display: block;
       padding: 32px 10px 24px;
-    }
 
-    &:hover {
-      color: $primary;
-      border-color: $primary;
+      transition: border-color 0.2s $animate, color 0.2s $animate;
+      border-bottom: 3px solid transparent;
+
+      &:hover,
+      &.NavItemActive {
+        color: $primary;
+        border-color: $primary;
+      }
     }
   }
 }

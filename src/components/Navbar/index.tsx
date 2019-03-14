@@ -1,32 +1,41 @@
 import * as React from 'react';
 import styles from './Navbar.module.scss';
+import { Link } from 'gatsby';
 
 export interface NavbarProps {}
 
 const Navbar: React.FunctionComponent<NavbarProps> = () => {
+  const [search, setSearch] = React.useState('');
   return (
     <div className={styles.Navbar}>
       <div className={styles.Topper} />
       <nav className={styles.Nav}>
-        <a href='/' className={styles.Brand}>
+        <Link to='/' className={styles.Brand}>
           <i className='far fa-brackets-curly' /> <span>Strontium</span>
-        </a>
+        </Link>
         <div className={styles.Search}>
           <i className='far fa-search' />
-          <input type='text' placeholder='Search' />
+          <input
+            type='text'
+            placeholder='Search'
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
         </div>
         <ul className={styles.NavList}>
           <li>
-            <a href='/docs'>Documentation</a>
+            <Link to='/reference' activeClassName={styles.NavItemActive} partiallyActive={true}>
+              Documentation
+            </Link>
           </li>
           <li>
-            <a href='/tutorial'>Tutorial</a>
+            <Link to='/tutorials'>Tutorial</Link>
           </li>
           <li>
-            <a href='/changes'>Changes</a>
+            <Link to='/changes'>Changes</Link>
           </li>
           <li>
-            <a href='/about'>About</a>
+            <Link to='/about'>About</Link>
           </li>
           <li>
             <a href='http://github.com/StrontiumJS' target='_blank'>
