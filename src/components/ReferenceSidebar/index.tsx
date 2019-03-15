@@ -11,12 +11,12 @@ const ReferenceSidebar: React.FunctionComponent<ReferenceSidebarProps> = () => {
         <div className={styles.SectionTitle}>Validation</div>
         <ul className={styles.SectionParts}>
           <li>
-            <Link to='/reference/validation/helpers' activeClassName={styles.Active}>
+            <Link to='/reference/validation/helpers/' activeClassName={styles.Active}>
               Helpers
             </Link>
           </li>
           <li>
-            <Link to='/reference/validation/validators' activeClassName={styles.Active}>
+            <Link to='/reference/validation/validators/' activeClassName={styles.Active}>
               Validators
             </Link>
           </li>
@@ -26,12 +26,12 @@ const ReferenceSidebar: React.FunctionComponent<ReferenceSidebarProps> = () => {
         <div className={styles.SectionTitle}>HTTP</div>
         <ul className={styles.SectionParts}>
           <li>
-            <Link to='/reference/http/controllers' activeClassName={styles.Active}>
+            <Link to='/reference/http/controllers/' activeClassName={styles.Active}>
               Controllers
             </Link>
           </li>
           <li>
-            <Link to='/reference/http/fastify' activeClassName={styles.Active}>
+            <Link to='/reference/http/fastify/' activeClassName={styles.Active}>
               Fastify
             </Link>
           </li>

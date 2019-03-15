@@ -22,7 +22,17 @@ module.exports = {
     {
       resolve: 'gatsby-transformer-remark',
       options: {
+        tableOfContents: {
+          maxDepth: 3,
+        },
         plugins: [
+          {
+            resolve: 'gatsby-remark-autolink-headers',
+            options: {
+              icon: false
+            }
+          },
+          'gatsby-remark-prismjs',
           {
             resolve: 'gatsby-remark-external-links',
             options: {

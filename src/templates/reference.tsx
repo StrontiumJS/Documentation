@@ -22,7 +22,7 @@ const ReferencePage: React.FunctionComponent<any> = ({ data }) => {
             className={styles.Table}
             dangerouslySetInnerHTML={{ __html: page.tableOfContents }}
           />
-          <div dangerouslySetInnerHTML={{ __html: page.html }} />
+          <div className={styles.Markdown} dangerouslySetInnerHTML={{ __html: page.html }} />
         </div>
       </div>
     </div>

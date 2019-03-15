@@ -26,10 +26,12 @@
     border-bottom: 1px solid lighten($line, 5%);
 
     ul {
-      line-height: 30px;
+      padding-inline-start: 40px;
 
-      li {
-        height: 25px;
+      p,
+      a {
+        display: inline;
+        line-height: 20px;
       }
 
       a {
@@ -46,6 +48,19 @@
           color: darken($primary, 10%);
         }
       }
+
+      ul {
+        margin-bottom: 3px;
+        line-height: 1;
+
+        a {
+          font-weight: 400;
+        }
+      }
+    }
+
+    > ul {
+      padding-inline-start: 0px;
     }
   }
 
@@ -55,27 +70,95 @@
     margin: 0.67em 0 0.35em;
   }
 
-  h2 {
-    font-size: 30px;
-    font-weight: 400;
-    margin: 55px 0 15px;
-    position: relative;
+  .Markdown {
+    h2 {
+      font-size: 30px;
+      font-weight: 400;
+      margin: 55px 0 15px;
+      position: relative;
 
-    &:first-of-type {
-      margin-top: 15px;
+      &:first-of-type {
+        margin-top: 15px;
+      }
+
+      &::before {
+        position: absolute;
+        content: '# ';
+        color: lighten($primary, 30%);
+        left: -23px;
+      }
     }
 
-    &::before {
-      position: absolute;
-      content: '# ';
-      color: lighten($primary, 30%);
-      left: -23px;
+    h3 {
+      font-size: 24px;
+      font-weight: 400;
+      margin-top: 30px;
+      margin-bottom: 10px;
     }
-  }
 
-  p {
-    font-size: 18px;
-    font-weight: 300;
-    margin: 10px 0 20px;
+    h4 {
+      font-size: 19px;
+      font-weight: 400;
+      margin-top: 25px;
+      margin-bottom: 10px;
+    }
+
+    strong {
+      font-weight: 500;
+    }
+
+    em {
+      font-style: italic;
+    }
+
+    a {
+      color: $primary;
+
+      &:hover {
+        color: darken($primary, 10%);
+      }
+    }
+
+    > p {
+      margin: 10px 0 20px;
+    }
+
+    p {
+      font-size: 18px;
+      font-weight: 300;
+
+      > code {
+        font-family: $SFMono;
+        font-size: 13px;
+        color: $secondary;
+      }
+    }
+
+    ul {
+      list-style-type: initial;
+    }
+
+    ol {
+      list-style-type: decimal;
+    }
+
+    ul,
+    ol {
+      padding-inline-start: 40px;
+
+      li {
+        font-size: 18px;
+        font-weight: 300;
+      }
+    }
+
+    pre {
+      font-family: $SFMono;
+      font-size: 13px;
+      background: rgba(238, 238, 238, 0.35);
+      border-bottom: 1px solid lighten($line, 5%);
+      border-radius: 3px;
+      padding: 10px;
+    }
   }
 }
