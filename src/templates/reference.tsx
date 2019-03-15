@@ -5,8 +5,12 @@ import Head from '../components/Head';
 import Navbar from '../components/Navbar';
 import ReferenceSidebar from '../components/ReferenceSidebar';
 
-const ReferencePage: React.FunctionComponent<any> = ({ data }) => {
-  const page = data.markdownRemark;
+export interface ReferencePageProps {
+  data: ReferenceTemplateQuery;
+}
+
+const ReferencePage: React.FunctionComponent<ReferencePageProps> = ({ data }) => {
+  const page = data.current;
 
   return (
     <div className={styles.ReferencePage}>
@@ -14,7 +18,7 @@ const ReferencePage: React.FunctionComponent<any> = ({ data }) => {
       <Navbar />
       <div className={styles.Container}>
         <div className={styles.Sidebar}>
-          <ReferenceSidebar />
+          <ReferenceSidebar data={data.sidebar.edges} />
         </div>
         <div className={styles.Content}>
           <h1>{page.frontmatter.title}</h1>
@@ -31,14 +35,53 @@ const ReferencePage: React.FunctionComponent<any> = ({ data }) => {
 
 export default ReferencePage;
 
+export interface ReferenceTemplateQuery {
+  current: {
+    html: string;
+    tableOfContents: string;
+    frontmatter: {
+      title: string;
+      module: string | null;
+    };
+  };
+  sidebar: {
+    edges: ReferenceSidebarEdge[];
+  };
+}
+
+export interface ReferenceSidebarEdge {
+  node: {
+    fields: {
+      slug: string;
+    };
+    frontmatter: {
+      title: string;
+      module: string | null;
+    };
+  };
+}
+
 export const query = graphql`
   query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    current: markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       tableOfContents
       frontmatter {
         title
         module
+      }
+    }
+    sidebar: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/reference/" } }) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            module
+          }
+        }
       }
     }
   }

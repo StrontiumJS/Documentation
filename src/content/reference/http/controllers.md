@@ -1,6 +1,6 @@
 ---
 title: Controllers
-module: http
+module: HTTP
 ---
 ## Section 1
 

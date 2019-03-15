@@ -1,5 +1,5 @@
 ---
 title: Helpers
-module: validation
+module: Validation
 ---
 Some stuff on validation helpers

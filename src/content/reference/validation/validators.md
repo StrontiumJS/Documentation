@@ -1,5 +1,5 @@
 ---
 title: Validators
-module: validation
+module: Validation
 ---
 Some stuff on validators

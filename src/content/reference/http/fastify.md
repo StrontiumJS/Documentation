@@ -1,6 +1,6 @@
 ---
 title: Fastify
-module: http
+module: HTTP
 ---
 Some stuff on fastify
 
