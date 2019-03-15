@@ -3,15 +3,28 @@ import { graphql } from 'gatsby';
 import styles from './reference.module.scss';
 import Head from '../components/Head';
 import Navbar from '../components/Navbar';
-import Helmet from 'react-helmet';
+import ReferenceSidebar from '../components/ReferenceSidebar';
 
 const ReferencePage: React.FunctionComponent<any> = ({ data }) => {
   const page = data.markdownRemark;
+
   return (
     <div className={styles.ReferencePage}>
       <Head title={page.frontmatter.title} />
       <Navbar />
-      <div dangerouslySetInnerHTML={{ __html: page.html }} />
+      <div className={styles.Container}>
+        <div className={styles.Sidebar}>
+          <ReferenceSidebar />
+        </div>
+        <div className={styles.Content}>
+          <h1>{page.frontmatter.title}</h1>
+          <div
+            className={styles.Table}
+            dangerouslySetInnerHTML={{ __html: page.tableOfContents }}
+          />
+          <div dangerouslySetInnerHTML={{ __html: page.html }} />
+        </div>
+      </div>
     </div>
   );
 };
@@ -22,6 +35,7 @@ export const query = graphql`
   query($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
+      tableOfContents
       frontmatter {
         title
         module

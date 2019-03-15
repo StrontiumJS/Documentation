@@ -2,3 +2,80 @@
 
 .ReferencePage {
 }
+
+.Container {
+  max-width: 1000px;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+}
+
+.Sidebar {
+  flex-grow: 0;
+  border-right: 1px solid lighten($line, 5%);
+  padding: 40px 40px 40px 0;
+}
+
+.Content {
+  flex-grow: 1;
+  padding: 25px 0 50px 90px;
+
+  .Table {
+    padding-bottom: 45px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid lighten($line, 5%);
+
+    ul {
+      line-height: 30px;
+
+      li {
+        height: 25px;
+      }
+
+      a {
+        font-size: 17px;
+        color: $primary;
+        font-weight: 700;
+
+        &::before {
+          content: '# ';
+          color: lighten($primary, 35%);
+        }
+
+        &:hover {
+          color: darken($primary, 10%);
+        }
+      }
+    }
+  }
+
+  h1 {
+    font-size: 48px;
+    font-weight: 200;
+    margin: 0.67em 0 0.35em;
+  }
+
+  h2 {
+    font-size: 30px;
+    font-weight: 400;
+    margin: 55px 0 15px;
+    position: relative;
+
+    &:first-of-type {
+      margin-top: 15px;
+    }
+
+    &::before {
+      position: absolute;
+      content: '# ';
+      color: lighten($primary, 30%);
+      left: -23px;
+    }
+  }
+
+  p {
+    font-size: 18px;
+    font-weight: 300;
+    margin: 10px 0 20px;
+  }
+}
