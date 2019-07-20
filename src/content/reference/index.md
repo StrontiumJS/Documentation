@@ -1,4 +1,5 @@
 ---
-title: Reference
+title: Overview 
 ---
-Installation etc.
+
+Welcome to Strontium!
