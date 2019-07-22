@@ -11,7 +11,7 @@ const Navbar: React.FunctionComponent<NavbarProps> = () => {
       <div className={styles.Topper} />
       <nav className={styles.Nav}>
         <Link to='/' className={styles.Brand}>
-          <i className='far fa-brackets-curly' /> <span>Strontium</span>
+          <span>Strontium</span> <i className='fab fa-js' />
         </Link>
         <div className={styles.Search}>
           <i className='far fa-search' />

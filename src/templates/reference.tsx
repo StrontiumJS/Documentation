@@ -18,7 +18,7 @@ const ReferencePage: React.FunctionComponent<ReferencePageProps> = ({ data }) =>
       <Navbar />
       <div className={styles.Container}>
         <div className={styles.Sidebar}>
-          <ReferenceSidebar data={data.sidebar.edges} />
+          <ReferenceSidebar />
         </div>
         <div className={styles.Content}>
           <h1>{page.frontmatter.title}</h1>
@@ -44,22 +44,22 @@ export interface ReferenceTemplateQuery {
       module: string | null;
     };
   };
-  sidebar: {
-    edges: ReferenceSidebarEdge[];
-  };
+  // sidebar: {
+  //   edges: ReferenceSidebarEdge[];
+  // };
 }
 
-export interface ReferenceSidebarEdge {
-  node: {
-    fields: {
-      slug: string;
-    };
-    frontmatter: {
-      title: string;
-      module: string | null;
-    };
-  };
-}
+// export interface ReferenceSidebarEdge {
+//   node: {
+//     fields: {
+//       slug: string;
+//     };
+//     frontmatter: {
+//       title: string;
+//       module: string | null;
+//     };
+//   };
+// }
 
 export const query = graphql`
   query($slug: String!) {
@@ -69,19 +69,6 @@ export const query = graphql`
       frontmatter {
         title
         module
-      }
-    }
-    sidebar: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/reference/" } }) {
-      edges {
-        node {
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-            module
-          }
-        }
       }
     }
   }
