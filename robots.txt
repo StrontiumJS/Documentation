@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://strontiumjs.com/sitemap.xml
+Host: https://strontiumjs.com
